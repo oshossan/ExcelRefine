@@ -7,9 +7,12 @@ using Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Tools.Ribbon;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
@@ -39,6 +42,8 @@ namespace ExcelRefineAddIn
                 item.Tag = nl.NewLine;
                 newLineDrd.Items.Add(item);
             }
+
+            // Note: To modify width of RibbonDropDown, set SizeString in designer manually.
         }
         private void chooseFolderTbt_Click(object sender, RibbonControlEventArgs e)
         {
@@ -71,6 +76,12 @@ namespace ExcelRefineAddIn
                 book = Globals.ThisAddIn.Application.ActiveWorkbook;
                 String fullName = book.FullName;
                 String newExtFullName = Path.ChangeExtension(fullName, extensionWithDot);
+
+                // if the workbook is not saved yet, use MyDocuments as default folder
+                if (String.IsNullOrEmpty(Path.GetDirectoryName(newExtFullName)))
+                {
+                    newExtFullName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), newExtFullName);
+                }
 
                 //MEMO: This addin does not support saving file to cloud location such as OneDrive and Sharepoint.
                 //If the workbook is located in a cloud folder, even when the user select "Save to book's folder",
@@ -160,6 +171,48 @@ namespace ExcelRefineAddIn
                     Marshal.ReleaseComObject(book);
                 }
             }
+        }
+
+        private void aboutBtn_Click(object sender, RibbonControlEventArgs e)
+        {
+            var form = new Form
+            {
+                Text = "About ExcelRefine",
+                Size = new Size(420, 200),
+                StartPosition = FormStartPosition.CenterScreen,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                MaximizeBox = false,
+                MinimizeBox = false
+            };
+
+            var lblProduct = new System.Windows.Forms.Label
+            {
+                Text = "ExcelRefine",
+                Font = new System.Drawing.Font("Segoe UI", 12, FontStyle.Bold),
+                Location = new System.Drawing.Point(20, 20),
+                AutoSize = true
+            };
+
+            var lblVersion = new System.Windows.Forms.Label
+            {
+                Text = $"Version: {Assembly.GetExecutingAssembly().GetName().Version}",
+                Location = new System.Drawing.Point(20, 50),
+                AutoSize = true
+            };
+
+            var link = new LinkLabel
+            {
+                Text = "GitHub: https://github.com/oshossan/ExcelRefine",
+                Location = new System.Drawing.Point(20, 80),
+                AutoSize = true
+            };
+            link.Links[0].LinkData = "https://github.com/oshossan/ExcelRefine/";
+            link.LinkClicked += (s, args) => Process.Start(link.Links[0].LinkData.ToString());
+
+            form.Controls.Add(lblProduct);
+            form.Controls.Add(lblVersion);
+            form.Controls.Add(link);
+            form.ShowDialog();
         }
     }
 }

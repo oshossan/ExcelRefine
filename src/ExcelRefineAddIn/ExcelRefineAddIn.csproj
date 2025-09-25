@@ -262,10 +262,12 @@
     </Compile>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Ribbon.xml" />
-  </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\about_btn.png" />
+    <Content Include="Resources\csv_btn.png" />
+    <Content Include="Resources\tsv_btn.png" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

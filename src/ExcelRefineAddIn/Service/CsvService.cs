@@ -16,11 +16,7 @@ namespace ExcelRefineAddIn.Service
 
         public static CsvService Instance => _instance.Value;
 
-
-        private CsvService()
-        {
-
-        }
+        private CsvService() {}
 
         public void save(List<List<object>> rows, String fullpath, String delimiter, String newLine, Encoding encoding)
         {

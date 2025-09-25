@@ -1,6 +1,6 @@
 # MIT License
 
-Copyright (c) 2025 Shohei
+Copyright (c) 2025 oshossan
 
 Permission is hereby granted, free of charge, to any person obtaining a copy  
 of this software and associated documentation files (the "Software"), to deal  
@@ -24,13 +24,15 @@ SOFTWARE.
 
 While not legally required beyond the MIT License, if you reuse or modify this code,  
 please consider retaining attribution to the original project name (**ExcelRefine**) and author (**oshossan**).  
-This request reflects the spirit of design transparency and operational clarity.
 
 ## Third-party notices
 
-This software includes components licensed under the MIT License:
+This software includes components licensed under the following terms:
 
 - CsvHelper by Josh Close — https://github.com/JoshClose/CsvHelper  
-- Microsoft BCL libraries — https://github.com/dotnet/runtime
+  Licensed under Microsoft Public License (MS-PL) and Apache License 2.0.
 
-These components are redistributed under the MIT License.
+- Microsoft BCL libraries — https://github.com/dotnet/runtime  
+  Licensed under the MIT License.
+
+These components are redistributed under their respective licenses.

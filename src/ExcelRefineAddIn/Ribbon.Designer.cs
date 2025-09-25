@@ -34,25 +34,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ribbon));
             this.excelRefineTab = this.Factory.CreateRibbonTab();
             this.csvFileOutputGrp = this.Factory.CreateRibbonGroup();
             this.charsetDrd = this.Factory.CreateRibbonDropDown();
             this.newLineDrd = this.Factory.CreateRibbonDropDown();
             this.separator1 = this.Factory.CreateRibbonSeparator();
+            this.saveToBookFolderTbt = this.Factory.CreateRibbonToggleButton();
+            this.chooseFolderTbt = this.Factory.CreateRibbonToggleButton();
+            this.separator2 = this.Factory.CreateRibbonSeparator();
             this.saveAsCsvBtn = this.Factory.CreateRibbonButton();
             this.saveAsTsvBtn = this.Factory.CreateRibbonButton();
-            this.separator2 = this.Factory.CreateRibbonSeparator();
-            this.chooseFolderTbt = this.Factory.CreateRibbonToggleButton();
-            this.saveToBookFolderTbt = this.Factory.CreateRibbonToggleButton();
+            this.aboutGrp = this.Factory.CreateRibbonGroup();
+            this.aboutBtn = this.Factory.CreateRibbonButton();
             this.excelRefineTab.SuspendLayout();
             this.csvFileOutputGrp.SuspendLayout();
+            this.aboutGrp.SuspendLayout();
             this.SuspendLayout();
             // 
             // excelRefineTab
             // 
             this.excelRefineTab.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
             this.excelRefineTab.Groups.Add(this.csvFileOutputGrp);
-            this.excelRefineTab.Label = "Excel Refine";
+            this.excelRefineTab.Groups.Add(this.aboutGrp);
+            this.excelRefineTab.Label = "ExcelRefine";
             this.excelRefineTab.Name = "excelRefineTab";
             // 
             // csvFileOutputGrp
@@ -73,38 +78,18 @@
             this.charsetDrd.Label = "Charset";
             this.charsetDrd.Name = "charsetDrd";
             this.charsetDrd.ShowLabel = false;
+            this.charsetDrd.SizeString = "\\\\r\\\\n (Windows)";
             // 
             // newLineDrd
             // 
             this.newLineDrd.Label = "dropDown1";
             this.newLineDrd.Name = "newLineDrd";
             this.newLineDrd.ShowLabel = false;
+            this.newLineDrd.SizeString = "\\\\r\\\\n (Windows)";
             // 
             // separator1
             // 
             this.separator1.Name = "separator1";
-            // 
-            // saveAsCsvBtn
-            // 
-            this.saveAsCsvBtn.Label = "Save As CSV";
-            this.saveAsCsvBtn.Name = "saveAsCsvBtn";
-            this.saveAsCsvBtn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.saveAsCsvBtn_Click);
-            // 
-            // saveAsTsvBtn
-            // 
-            this.saveAsTsvBtn.Label = "Save As TSV";
-            this.saveAsTsvBtn.Name = "saveAsTsvBtn";
-            this.saveAsTsvBtn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.saveAsTsvBtn_Click);
-            // 
-            // separator2
-            // 
-            this.separator2.Name = "separator2";
-            // 
-            // chooseFolderTbt
-            // 
-            this.chooseFolderTbt.Label = "Choose folder to save";
-            this.chooseFolderTbt.Name = "chooseFolderTbt";
-            this.chooseFolderTbt.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.chooseFolderTbt_Click);
             // 
             // saveToBookFolderTbt
             // 
@@ -112,6 +97,48 @@
             this.saveToBookFolderTbt.Label = "Save to book\'s folder";
             this.saveToBookFolderTbt.Name = "saveToBookFolderTbt";
             this.saveToBookFolderTbt.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.saveToBookFolderTbt_Click);
+            // 
+            // chooseFolderTbt
+            // 
+            this.chooseFolderTbt.Label = "Choose folder to save";
+            this.chooseFolderTbt.Name = "chooseFolderTbt";
+            this.chooseFolderTbt.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.chooseFolderTbt_Click);
+            // 
+            // separator2
+            // 
+            this.separator2.Name = "separator2";
+            // 
+            // saveAsCsvBtn
+            // 
+            this.saveAsCsvBtn.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.saveAsCsvBtn.Image = ((System.Drawing.Image)(resources.GetObject("saveAsCsvBtn.Image")));
+            this.saveAsCsvBtn.Label = "Save As CSV";
+            this.saveAsCsvBtn.Name = "saveAsCsvBtn";
+            this.saveAsCsvBtn.ShowImage = true;
+            this.saveAsCsvBtn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.saveAsCsvBtn_Click);
+            // 
+            // saveAsTsvBtn
+            // 
+            this.saveAsTsvBtn.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.saveAsTsvBtn.Image = ((System.Drawing.Image)(resources.GetObject("saveAsTsvBtn.Image")));
+            this.saveAsTsvBtn.Label = "Save As TSV";
+            this.saveAsTsvBtn.Name = "saveAsTsvBtn";
+            this.saveAsTsvBtn.ShowImage = true;
+            this.saveAsTsvBtn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.saveAsTsvBtn_Click);
+            // 
+            // aboutGrp
+            // 
+            this.aboutGrp.Items.Add(this.aboutBtn);
+            this.aboutGrp.Name = "aboutGrp";
+            // 
+            // aboutBtn
+            // 
+            this.aboutBtn.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.aboutBtn.Image = ((System.Drawing.Image)(resources.GetObject("aboutBtn.Image")));
+            this.aboutBtn.Label = "About ExcelRefine";
+            this.aboutBtn.Name = "aboutBtn";
+            this.aboutBtn.ShowImage = true;
+            this.aboutBtn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.aboutBtn_Click);
             // 
             // Ribbon
             // 
@@ -123,6 +150,8 @@
             this.excelRefineTab.PerformLayout();
             this.csvFileOutputGrp.ResumeLayout(false);
             this.csvFileOutputGrp.PerformLayout();
+            this.aboutGrp.ResumeLayout(false);
+            this.aboutGrp.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -139,6 +168,8 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonSeparator separator2;
         internal Microsoft.Office.Tools.Ribbon.RibbonToggleButton chooseFolderTbt;
         internal Microsoft.Office.Tools.Ribbon.RibbonToggleButton saveToBookFolderTbt;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup aboutGrp;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton aboutBtn;
     }
 
     partial class ThisRibbonCollection
