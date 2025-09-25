@@ -1,0 +1,42 @@
+# Build output
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vs/
+
+# Office-specific
+*.vsto
+*.manifest
+*.application
+*.deploy
+*.db
+
+# Signing key / certificate
+*.pfx
+*.snk
+
+# NuGet
+packages/
+*.nupkg
+project.lock.json
+project.assets.json
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.sln.ide
