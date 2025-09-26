@@ -1,11 +1,7 @@
 [日本語版はこちら / Japanese version is here](./README.ja.md)
 
 ## Latest Installer
-[version 0.1.0](./ExcelRefineSetup_v0.1.0.zip) 
-
-- Extract the archive to any location, then run `setup.exe` inside the extracted folder to begin installation. 
-- The add-in installs to the current user's environment only. It does not interfere with other user profiles on the same machine.
-- Administrator privileges are not required for installation.
+in preparation
 
 ## Installation Notes
 During installation, you may encounter the following warnings. These are expected due to the lack of digital signature.
