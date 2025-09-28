@@ -1,7 +1,9 @@
 [English version is here / 英語版はこちら](./README.md)
 
 ## 最新版インストーラー
-準備中
+[version 0.1.1](.././download/0.1.1/ExcelRefineSetup_v0.1.1.zip)
+
+- アーカイブを任意の場所に解凍し、解凍されたフォルダ内のsetup.exeを実行してインストールしてください。
 
 ## インストール時の注意点
 

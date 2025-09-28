@@ -1,7 +1,9 @@
 [日本語版はこちら / Japanese version is here](./README.ja.md)
 
 ## Latest Installer
-in preparation
+[version 0.1.1](.././download/0.1.1/ExcelRefineSetup_v0.1.1.zip)
+
+- Extract the archive to any location, then run `setup.exe` inside the extracted folder to begin installation. 
 
 ## Installation Notes
 During installation, you may encounter the following warnings. These are expected due to the lack of digital signature.
