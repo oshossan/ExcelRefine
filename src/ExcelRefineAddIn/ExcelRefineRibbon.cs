@@ -19,10 +19,11 @@ using System.Windows.Forms;
 
 namespace ExcelRefineAddIn
 {
-    public partial class Ribbon
+    public partial class ExcelRefineRibbon
     {
         private readonly VstoExcelService _excelService = VstoExcelService.Instance;
         private readonly CsvService _csvService = CsvService.Instance;
+        private readonly SerilogService _logService = SerilogService.Instance;
 
         private void Ribbon_Load(object sender, RibbonUIEventArgs e)
         {
@@ -83,7 +84,7 @@ namespace ExcelRefineAddIn
                     newExtFullName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), newExtFullName);
                 }
 
-                //MEMO: This addin does not support saving file to cloud location such as OneDrive and Sharepoint.
+                //Note: This addin does not support saving file to cloud location such as OneDrive and Sharepoint.
                 //If the workbook is located in a cloud folder, even when the user select "Save to book's folder",
                 //prompt the user to choose local folder to save. 
                 if (newExtFullName.StartsWith("http") || chooseFolderTbt.Checked)
@@ -127,7 +128,6 @@ namespace ExcelRefineAddIn
                     }
                 }
 
-
                 //check file lock
                 if (File.Exists(newExtFullName))
                 {
@@ -158,6 +158,11 @@ namespace ExcelRefineAddIn
 
                 MessageBox.Show(String.Format("File saved as below.\r\nFilename: {0}\r\nFolder path: {1}", Path.GetFileName(newExtFullName),
                     Path.GetDirectoryName(newExtFullName)), "File saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to save file. " + ex.Message, "Failed to save", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                _logService.Error("Error", ex);
             }
             finally
             {

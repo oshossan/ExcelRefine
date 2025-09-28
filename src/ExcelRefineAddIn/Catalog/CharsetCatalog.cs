@@ -14,10 +14,5 @@ namespace ExcelRefineAddIn.Catalog
             new CharsetOption { DisplayName = "Shift_JIS", Encoding = Encoding.GetEncoding("shift_jis") },
             new CharsetOption { DisplayName = "UTF-8", Encoding = Encoding.UTF8 },
         };
-
-        static CharsetCatalog()
-        {
-            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-        }
     }
 }

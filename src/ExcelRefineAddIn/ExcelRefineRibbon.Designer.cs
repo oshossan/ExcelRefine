@@ -1,13 +1,15 @@
-﻿namespace ExcelRefineAddIn
+﻿using Microsoft.Office.Tools.Ribbon;
+
+namespace ExcelRefineAddIn
 {
-    partial class Ribbon : Microsoft.Office.Tools.Ribbon.RibbonBase
+    partial class ExcelRefineRibbon : Microsoft.Office.Tools.Ribbon.RibbonBase
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        public Ribbon()
+        public ExcelRefineRibbon()
             : base(Globals.Factory.GetRibbonFactory())
         {
             InitializeComponent();
@@ -34,7 +36,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ribbon));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExcelRefineRibbon));
             this.excelRefineTab = this.Factory.CreateRibbonTab();
             this.csvFileOutputGrp = this.Factory.CreateRibbonGroup();
             this.charsetDrd = this.Factory.CreateRibbonDropDown();
@@ -54,7 +56,6 @@
             // 
             // excelRefineTab
             // 
-            this.excelRefineTab.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
             this.excelRefineTab.Groups.Add(this.csvFileOutputGrp);
             this.excelRefineTab.Groups.Add(this.aboutGrp);
             this.excelRefineTab.Label = "ExcelRefine";
@@ -140,9 +141,9 @@
             this.aboutBtn.ShowImage = true;
             this.aboutBtn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.aboutBtn_Click);
             // 
-            // Ribbon
+            // ExcelRefineRibbon
             // 
-            this.Name = "Ribbon";
+            this.Name = "ExcelRefineRibbon";
             this.RibbonType = "Microsoft.Excel.Workbook";
             this.Tabs.Add(this.excelRefineTab);
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.Ribbon_Load);
@@ -174,9 +175,9 @@
 
     partial class ThisRibbonCollection
     {
-        internal Ribbon Ribbon
+        internal ExcelRefineRibbon Ribbon
         {
-            get { return this.GetRibbon<Ribbon>(); }
+            get { return this.GetRibbon<ExcelRefineRibbon>(); }
         }
     }
 }

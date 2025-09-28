@@ -29,10 +29,16 @@ please consider retaining attribution to the original project name (**ExcelRefin
 
 This software includes components licensed under the following terms:
 
-- CsvHelper by Josh Close — https://github.com/JoshClose/CsvHelper  
+- CsvHelper — https://github.com/JoshClose/CsvHelper  
   Licensed under Microsoft Public License (MS-PL) and Apache License 2.0.
 
-- Microsoft BCL libraries — https://github.com/dotnet/runtime  
-  Licensed under the MIT License.
+- Serilog — https://github.com/serilog/serilog  
+  Licensed under the Apache License 2.0.
+
+- Serilog.Sinks.File — https://github.com/serilog/serilog-sinks-file  
+  Licensed under the Apache License 2.0.
+
+- Microsoft BCL and runtime libraries — https://github.com/dotnet/runtime  
+  Licensed under the MIT License.  
 
 These components are redistributed under their respective licenses.
