@@ -1,7 +1,7 @@
 [日本語版はこちら / Japanese version is here](./README.ja.md)
 
 ## Latest Installer
-[version 0.1.1](.././download/0.1.1/ExcelRefineSetup_v0.1.1.zip)
+[version 0.1.1](https://github.com/oshossan/ExcelRefine/releases/download/0.1.1/ExcelRefineSetup_v0.1.1.zip)
 
 - Extract the archive to any location, then run `setup.exe` inside the extracted folder to begin installation. 
 

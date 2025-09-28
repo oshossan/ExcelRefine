@@ -1,7 +1,7 @@
 [English version is here / 英語版はこちら](./README.md)
 
 ## 最新版インストーラー
-[version 0.1.1](.././download/0.1.1/ExcelRefineSetup_v0.1.1.zip)
+[version 0.1.1](https://github.com/oshossan/ExcelRefine/releases/download/0.1.1/ExcelRefineSetup_v0.1.1.zip)
 
 - アーカイブを任意の場所に解凍し、解凍されたフォルダ内のsetup.exeを実行してインストールしてください。
 
